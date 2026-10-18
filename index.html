@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Neha's Birthday ✨</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #140d0b;
+    color: white;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+    animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   FAIRY LIGHTS
+========================= */
+
+.fairy-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    justify-content: space-around;
+
+    pointer-events: none;
+}
+
+.fairy-lights span {
+    width: 5px;
+    height: 5px;
+
+    background: #f6d88a;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #f6d88a,
+        0 0 15px #f6d88a;
+
+    animation: twinkle 2s infinite alternate;
+}
+
+.fairy-lights span:nth-child(even) {
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   SCREEN 1
+========================= */
+
+#screen1 {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #38221b 0%,
+            #140d0b 65%
+        );
+
+    text-align: center;
+}
+
+.intro-small {
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #d9b873;
+
+    margin-bottom: 20px;
+}
+
+.main-title {
+
+    font-size:
+        clamp(55px, 12vw, 120px);
+
+    font-weight: normal;
+
+    line-height: 0.95;
+
+    color: #f4d58c;
+
+    text-shadow:
+        0 0 30px rgba(244,213,140,0.15);
+}
+
+.subtitle {
+
+    margin-top: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    color: #e8d8c4;
+}
+
+.gold-button {
+
+    margin-top: 40px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #d7b56d;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #f5d995;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.gold-button:hover {
+
+    background: #d7b56d;
+
+    color: #1a0e09;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SCREEN 2
+========================= */
+
+#screen2 {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #642536,
+            #241016 65%
+        );
+}
+
+.card {
+
+    width: min(520px, 100%);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+
+    padding: 40px 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+}
+
+.card h2 {
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #f4d58c;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+
+    font-family: Arial, sans-serif;
+
+    color: #eadede;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.name-input {
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    background:
+        rgba(0,0,0,0.25);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    margin-bottom: 20px;
+}
+
+.name-input::placeholder {
+
+    color: #cbbfc2;
+}
+
+.name-input:focus {
+
+    border-color: #d7b56d;
+}
+
+.choice-row {
+
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.choice-button {
+
+    flex: 1;
+
+    min-width: 130px;
+
+    padding: 15px 20px;
+
+    border-radius: 50px;
+
+    border: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.yes-button {
+
+    background: #e7c87c;
+
+    color: #29160d;
+}
+
+.no-button {
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: white;
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+}
+
+.choice-button:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   MEME SCREEN
+========================= */
+
+#memeScreen {
+
+    background: #090707;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#memeImage {
+
+    max-width: min(90vw, 700px);
+
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.7);
+}
+
+#memeComment {
+
+    margin-top: 25px;
+
+    max-width: 850px;
+
+    padding: 0 20px;
+
+    color: #f4d58c;
+
+    font-size:
+        clamp(22px, 4vw, 34px);
+
+    line-height: 1.3;
+
+    text-shadow:
+        0 2px 15px
+        rgba(244,213,140,0.25);
+}
+
+
+/* =========================
+   DRESS CODE
+========================= */
+
+#screen3 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #38251c,
+            #17100d
+        );
+}
+
+.section-card {
+
+    width: min(850px, 100%);
+
+    text-align: center;
+}
+
+.section-title {
+
+    font-size:
+        clamp(38px, 7vw, 65px);
+
+    font-weight: normal;
+
+    color: #f1d18b;
+
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+
+    font-family: Arial, sans-serif;
+
+    color: #d8c9bc;
+
+    margin-bottom: 35px;
+}
+
+.dress-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.dress-button {
+
+    min-height: 120px;
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+.dress-button:hover {
+
+    background:
+        rgba(215,181,109,0.18);
+
+    transform: translateY(-4px);
+}
+
+.dress-button strong {
+
+    display: block;
+
+    font-size: 24px;
+
+    color: #f4d58c;
+
+    margin-bottom: 8px;
+}
+
+.dress-button span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #d8cccc;
+}
+
+
+/* =========================
+   VENUE
+========================= */
+
+#screen4 {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #5a3825,
+            #1a100b 75%
+        );
+}
+
+.venue-card {
+
+    width: min(650px, 100%);
+
+    background:
+        rgba(0,0,0,0.3);
+
+    border:
+        1px solid rgba(244,213,140,0.25);
+
+    border-radius: 25px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+}
+
+.venue-card h2 {
+
+    font-size: 45px;
+
+    color: #f4d58c;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.venue-info {
+
+    font-family: Arial, sans-serif;
+
+    color: #eee;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.maps-button {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 13px 24px;
+
+    border-radius: 50px;
+
+    background: #f4d58c;
+
+    color: #24140d;
+
+    border: none;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.continue-button {
+
+    display: block;
+
+    margin: 5px auto 0;
+
+    background: transparent;
+
+    color: #f4d58c;
+
+    border: none;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BARS
+========================= */
+
+#screen5 {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #43285e,
+            #120c18 70%
+        );
+}
+
+.bars-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: min(850px, 100%);
+}
+
+.bars-button {
+
+    min-height: 150px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+.bars-button:hover {
+
+    transform: translateY(-4px);
+
+    background:
+        rgba(255,255,255,0.13);
+}
+
+.bars-button strong {
+
+    display: block;
+
+    font-size: 22px;
+
+    color: #f4d58c;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   NO CONTINUE
+========================= */
+
+#noContinueScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #522433,
+            #160d11 70%
+        );
+}
+
+.no-card {
+
+    width: min(600px, 100%);
+
+    text-align: center;
+}
+
+.no-card h2 {
+
+    font-size:
+        clamp(40px, 8vw, 65px);
+
+    font-weight: normal;
+
+    color: #f4d58c;
+
+    margin-bottom: 20px;
+}
+
+.no-card p {
+
+    font-family: Arial, sans-serif;
+
+    color: #e5d7d9;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FINAL RSVP
+========================= */
+
+#screen6 {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #45321b,
+            #120d09 75%
+        );
+}
+
+.summary-card {
+
+    width: min(650px, 100%);
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(244,213,140,0.25);
+
+    border-radius: 25px;
+
+    padding: 35px 28px;
+
+    text-align: center;
+}
+
+.summary-card h2 {
+
+    font-size: 45px;
+
+    font-weight: normal;
+
+    color: #f4d58c;
+
+    margin-bottom: 25px;
+}
+
+.summary {
+
+    text-align: left;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+
+    color: #eee;
+}
+
+.summary strong {
+
+    color: #f4d58c;
+}
+
+.confirm-button {
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    border: none;
+
+    background: #f4d58c;
+
+    color: #24140d;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   THANK YOU
+========================= */
+
+#thankYouScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #41251f,
+            #120b09 75%
+        );
+
+    text-align: center;
+}
+
+.thank-you-title {
+
+    font-size:
+        clamp(48px, 10vw, 90px);
+
+    font-weight: normal;
+
+    color: #f4d58c;
+
+    margin-bottom: 20px;
+}
+
+.thank-you-text {
+
+    font-family: Arial, sans-serif;
+
+    color: #eadbd3;
+
+    line-height: 1.7;
+
+    max-width: 550px;
+}
+
+
+/* =========================
+   CELEBRATION
+========================= */
+
+#celebrationScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #71521e,
+            #1b1108 70%
+        );
+
+    text-align: center;
+}
+
+.celebration-title {
+
+    font-size:
+        clamp(45px, 9vw, 85px);
+
+    font-weight: normal;
+
+    color: #ffe5a1;
+
+    margin-bottom: 20px;
+}
+
+.celebration-text {
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding: 25px 15px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .card h2 {
+        font-size: 34px;
+    }
+
+    .dress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-row {
+        flex-direction: column;
+    }
+
+    .choice-button {
+        width: 100%;
+    }
+
+    .venue-card h2 {
+        font-size: 35px;
+    }
+
+    .summary-card h2 {
+        font-size: 35px;
+    }
+
+    #memeImage {
+        max-height: 60vh;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SCREEN 1
+========================================= -->
+
+<section id="screen1" class="screen active">
+
+    <div class="fairy-lights">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <div>
+
+        <div class="intro-small">
+            You're Invited
+        </div>
+
+
+        <h1 class="main-title">
+            Neha's<br>
+            Birthday
+        </h1>
+
+
+        <p class="subtitle">
+            AN EVENING OF DINNER • DRINKS • CHAOS
+        </p>
+
+
+        <button
+            class="gold-button"
+            onclick="startInvitation()">
+
+            Let's get this party started ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 2 — NAME + RSVP
+========================================= -->
+
+<section id="screen2" class="screen">
+
+    <div class="card">
+
+        <h2>
+            Are you coming?
+        </h2>
+
+
+        <p>
+            Before we get into the important details...
+            tell me who's joining the birthday chaos. 👀
+        </p>
+
+
+        <input
+            type="text"
+            id="guestName"
+            class="name-input"
+            placeholder="Your name"
+            autocomplete="name"
+        >
+
+
+        <div class="choice-row">
+
+            <button
+                class="choice-button yes-button"
+                onclick="chooseYes()">
+
+                YES, I'M COMING 🥂
+
+            </button>
+
+
+            <button
+                class="choice-button no-button"
+                onclick="chooseNo()">
+
+                Can't make it 😭
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MEME SCREEN
+========================================= -->
+
+<section
+    id="memeScreen"
+    class="screen">
+
+    <img
+        id="memeImage"
+        src=""
+        alt="Reaction meme"
+    >
+
+
+    <div id="memeComment"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 3 — DRESS CODE
+========================================= -->
+
+<section id="screen3" class="screen">
+
+    <div class="section-card">
+
+        <h1 class="section-title">
+            Dress Code ✨
+        </h1>
+
+
+        <p class="section-subtitle">
+            What kind of main character are you feeling?
+        </p>
+
+
+        <div class="dress-grid">
+
+
+            <button
+                class="dress-button"
+                onclick="chooseDress('Cocktail')">
+
+                <strong>
+                    Cocktail
+                </strong>
+
+                <span>
+                    Dress to impress 🍸
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="dress-button"
+                onclick="chooseDress('Minimalist')">
+
+                <strong>
+                    Minimalist
+                </strong>
+
+                <span>
+                    Clean, simple, effortless.
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="dress-button"
+                onclick="chooseDress('Chic')">
+
+                <strong>
+                    Chic
+                </strong>
+
+                <span>
+                    Fashion girl energy.
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="dress-button"
+                onclick="chooseDress('Your Choice')">
+
+                <strong>
+                    Your Choice
+                </strong>
+
+                <span>
+                    Do whatever you want 😂
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 4 — VENUE
+========================================= -->
+
+<section id="screen4" class="screen">
+
+    <div class="venue-card">
+
+        <h2>
+            Dinner 🍝
+        </h2>
+
+
+        <div class="venue-info">
+
+            <strong>
+                TASTE Italian Kitchen
+            </strong>
+
+            <br>
+
+            208 Lincoln Green
+
+            <br>
+
+            Starkville, MS 39759
+
+            <br><br>
+
+            <strong>
+                Saturday, October 24, 2026
+            </strong>
+
+            <br>
+
+            7:00 PM
+
+        </div>
+
+
+        <a
+            class="maps-button"
+            href="https://www.google.com/maps/search/?api=1&query=TASTE%20Italian%20Kitchen%2C%20208%20Lincoln%20Green%2C%20Starkville%2C%20MS%2039759"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="openMaps()">
+
+            📍 Open in Google Maps
+
+        </a>
+
+
+        <button
+            class="continue-button"
+            onclick="continueFromVenue()">
+
+            Continue →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 5 — BARS
+========================================= -->
+
+<section id="screen5" class="screen">
+
+    <div class="section-card">
+
+        <h1 class="section-title">
+            And after dinner... 👀
+        </h1>
+
+
+        <p class="section-subtitle">
+            Are we continuing the night?
+        </p>
+
+
+        <div class="bars-grid">
+
+
+            <button
+                class="bars-button"
+                onclick="chooseBars('Absolutely')">
+
+                <strong>
+                    Absolutely 🍸
+                </strong>
+
+                Let's keep going.
+
+            </button>
+
+
+
+            <button
+                class="bars-button"
+                onclick="chooseBars('Maybe')">
+
+                <strong>
+                    Maybe 👀
+                </strong>
+
+                We'll see where the night takes us.
+
+            </button>
+
+
+
+            <button
+                class="bars-button"
+                onclick="chooseBars('Responsible')">
+
+                <strong>
+                    I'm responsible tonight 😂
+                </strong>
+
+                Someone has to be.
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     NO → CONTINUE?
+========================================= -->
+
+<section
+    id="noContinueScreen"
+    class="screen">
+
+    <div class="no-card">
+
+        <h2>
+            No worries ❤️
+        </h2>
+
+
+        <p>
+            We know you can't make dinner...
+            but would you still like to see the rest
+            of the invitation?
+        </p>
+
+
+        <div class="choice-row">
+
+
+            <button
+                class="choice-button yes-button"
+                onclick="continueAfterNo()">
+
+                Yes, show me 👀
+
+            </button>
+
+
+
+            <button
+                class="choice-button no-button"
+                onclick="finishNoRSVP()">
+
+                No, I'm good ❤️
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL RSVP
+========================================= -->
+
+<section id="screen6" class="screen">
+
+    <div class="summary-card">
+
+        <h2>
+            Your RSVP ✨
+        </h2>
+
+
+        <div
+            id="summary"
+            class="summary">
+        </div>
+
+
+        <button
+            class="confirm-button"
+            onclick="confirmRSVP()">
+
+            Confirm My RSVP
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     THANK YOU
+========================================= -->
+
+<section
+    id="thankYouScreen"
+    class="screen">
+
+    <div>
+
+        <h1 class="thank-you-title">
+            Thank You ❤️
+        </h1>
+
+
+        <p class="thank-you-text">
+
+            Totally understand! We'll miss having you there,
+            but thank you for letting me know. ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CELEBRATION
+========================================= -->
+
+<section
+    id="celebrationScreen"
+    class="screen">
+
+    <div>
+
+        <h1 class="celebration-title">
+
+            You're officially<br>
+            on the list! 🥂✨
+
+        </h1>
+
+
+        <p class="celebration-text">
+
+            Can't wait to celebrate with you!
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================================
+   GOOGLE APPS SCRIPT URL
+========================================= */
+
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbx84weKmlZKst3utAHwLpHHVeDKxJQSNAld84trT056qVCSKMrx_8n8ozxDjV1PlgxS/exec";
+
+
+
+/* =========================================
+   RSVP VARIABLES
+========================================= */
+
+let guestName = "";
+
+let initialRSVP = "";
+
+let dressChoice = "";
+
+let venueMaps = false;
+
+let barsChoice = "";
+
+
+
+/* =========================================
+   SCREEN CONTROL
+========================================= */
+
+function showScreen(screenID) {
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(screenID)
+        .classList.add("active");
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =========================================
+   START
+========================================= */
+
+function startInvitation() {
+
+    showScreen("screen2");
+
+}
+
+
+
+/* =========================================
+   GET NAME
+========================================= */
+
+function getGuestName() {
+
+    const input =
+        document.getElementById("guestName");
+
+
+    guestName =
+        input.value.trim();
+
+
+    if (!guestName) {
+
+        alert(
+            "Wait! I need your name first 😂"
+        );
+
+        input.focus();
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+
+/* =========================================
+   YES RSVP
+========================================= */
+
+function chooseYes() {
+
+    if (!getGuestName()) {
+
+        return;
+
+    }
+
+
+    initialRSVP = "Yes";
+
+
+    showMeme(
+
+        "memes/Excited yes speed meme.gif",
+
+        "SHE SAID YES 🥂✨",
+
+        function() {
+
+            showScreen("screen3");
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   NO RSVP
+========================================= */
+
+function chooseNo() {
+
+    if (!getGuestName()) {
+
+        return;
+
+    }
+
+
+    initialRSVP = "No";
+
+
+    showMeme(
+
+        "memes/sad cat face meme.gif",
+
+        "NOOO 😭 We'll definitely miss you!",
+
+        function() {
+
+            showScreen("noContinueScreen");
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   NO → CONTINUE
+========================================= */
+
+function continueAfterNo() {
+
+    showScreen("screen3");
+
+}
+
+
+
+/* =========================================
+   NO → END
+========================================= */
+
+function finishNoRSVP() {
+
+    sendRSVPToGoogleSheet();
+
+    showScreen("thankYouScreen");
+
+}
+
+
+
+/* =========================================
+   DRESS CODE
+========================================= */
+
+function chooseDress(choice) {
+
+    dressChoice = choice;
+
+
+    let memePath = "";
+
+    let comment = "";
+
+
+    if (choice === "Cocktail") {
+
+        memePath =
+            "memes/Cocktail clock it.png";
+
+        comment =
+            "Okay, let her cook 👩‍🍳🍸";
+
+    }
+
+
+    else if (choice === "Minimalist") {
+
+        memePath =
+            "memes/Casual Minimalist Slay.jpg";
+
+        comment =
+            "Noted. Clean, simple, effortless. ✨";
+
+    }
+
+
+    else if (choice === "Chic") {
+
+        memePath =
+            "memes/Chic Hair tucking meme.jpg";
+
+        comment =
+            "Okayyy, she understood the assignment. 💅✨";
+
+    }
+
+
+    else if (choice === "Your Choice") {
+
+        memePath =
+            "memes/your choice meme.gif";
+
+        comment =
+            "Honestly? Do your thing 😂";
+
+    }
+
+
+    showMeme(
+
+        memePath,
+
+        comment,
+
+        function() {
+
+            showScreen("screen4");
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   GOOGLE MAPS
+========================================= */
+
+function openMaps() {
+
+    venueMaps = true;
+
+}
+
+
+
+/* =========================================
+   VENUE → BARS
+========================================= */
+
+function continueFromVenue() {
+
+    showScreen("screen5");
+
+}
+
+
+
+/* =========================================
+   BARS
+========================================= */
+
+function chooseBars(choice) {
+
+    barsChoice = choice;
+
+
+    let memePath = "";
+
+    let comment = "";
+
+
+    if (choice === "Absolutely") {
+
+        memePath =
+            "memes/Excited meme for bars.jpg";
+
+        comment =
+            "Okay, we're definitely continuing. 🍸🥂";
+
+    }
+
+
+    else if (choice === "Maybe") {
+
+        memePath =
+            "memes/Maybe for bars.gif";
+
+        comment =
+            "Hmm... noted 👀 We'll see where the night takes us.";
+
+    }
+
+
+    else if (choice === "Responsible") {
+
+        memePath =
+            "memes/Ill be responsible meme.gif";
+
+        comment =
+            "Okay, someone has to be responsible tonight 😂";
+
+    }
+
+
+    showMeme(
+
+        memePath,
+
+        comment,
+
+        function() {
+
+            updateSummary();
+
+            showScreen("screen6");
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   MEME DISPLAY
+========================================= */
+
+function showMeme(
+    imagePath,
+    comment,
+    callback
+) {
+
+    const image =
+        document.getElementById("memeImage");
+
+
+    const commentElement =
+        document.getElementById("memeComment");
+
+
+    image.src =
+        imagePath;
+
+
+    commentElement.textContent =
+        comment;
+
+
+    showScreen("memeScreen");
+
+
+    setTimeout(
+
+        function() {
+
+            callback();
+
+        },
+
+        3000
+
+    );
+
+}
+
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+function updateSummary() {
+
+    const summary =
+        document.getElementById("summary");
+
+
+    summary.innerHTML = `
+
+        <div>
+            <strong>Name:</strong>
+            ${escapeHTML(guestName)}
+        </div>
+
+        <div>
+            <strong>Coming to dinner:</strong>
+            ${escapeHTML(initialRSVP)}
+        </div>
+
+        <div>
+            <strong>Dress code:</strong>
+            ${escapeHTML(
+                dressChoice || "Not selected"
+            )}
+        </div>
+
+        <div>
+            <strong>Dinner:</strong>
+            TASTE Italian Kitchen
+        </div>
+
+        <div>
+            <strong>Maps:</strong>
+            ${venueMaps ? "Opened" : "Not opened"}
+        </div>
+
+        <div>
+            <strong>After dinner:</strong>
+            ${escapeHTML(
+                barsChoice || "Not selected"
+            )}
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================================
+   CONFIRM RSVP
+========================================= */
+
+function confirmRSVP() {
+
+    updateSummary();
+
+
+    sendRSVPToGoogleSheet();
+
+
+    /*
+       IMPORTANT:
+       If someone originally said NO,
+       they NEVER get the party-started GIF.
+    */
+
+    if (initialRSVP === "No") {
+
+        showScreen("thankYouScreen");
+
+        return;
+
+    }
+
+
+    /*
+       ONLY YES guests see this.
+    */
+
+    showMeme(
+
+        "memes/lets get this party started.gif",
+
+        "LET'S GOOOOO 🥂🎉 It's officially party time!",
+
+        function() {
+
+            showScreen("celebrationScreen");
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   GOOGLE SHEETS
+========================================= */
+
+function sendRSVPToGoogleSheet() {
+
+    const data = {
+
+        timestamp:
+            new Date().toLocaleString(),
+
+        name:
+            guestName,
+
+        rsvp:
+            initialRSVP,
+
+        dressCode:
+            dressChoice || "",
+
+        dinnerVenue:
+            "TASTE Italian Kitchen",
+
+        dinnerDate:
+            "October 24, 2026",
+
+        dinnerTime:
+            "7:00 PM",
+
+        openedMaps:
+            venueMaps ? "Yes" : "No",
+
+        bars:
+            barsChoice || ""
+
+    };
+
+
+    fetch(
+
+        GOOGLE_SCRIPT_URL,
+
+        {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+
+            },
+
+            body:
+                JSON.stringify(data)
+
+        }
+
+    )
+
+    .then(function() {
+
+        console.log(
+            "RSVP sent successfully."
+        );
+
+    })
+
+    .catch(function(error) {
+
+        console.error(
+            "RSVP submission failed:",
+            error
+        );
+
+    });
+
+}
+
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(text) {
+
+    return String(text)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+</script>
+
+</body>
+</html>
